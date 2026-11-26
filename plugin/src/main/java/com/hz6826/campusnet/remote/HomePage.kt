@@ -18,7 +18,6 @@ import com.xjtu.toolbox.plugin.api.UiRowNode
 import com.xjtu.toolbox.plugin.api.UiTextColor
 import com.xjtu.toolbox.plugin.api.UiTextNode
 import com.xjtu.toolbox.plugin.api.UiTextStyle
-import com.xjtu.toolbox.plugin.api.UiWeightNode
 import org.json.JSONObject
 
 /**
@@ -169,13 +168,11 @@ internal class HomePage(
 
     private fun actionButton(data: JSONObject?): UiNode {
         val enabled = !busy && data != null
-        val button = if (data?.optBoolean("online") == true) {
+        return if (data?.optBoolean("online") == true) {
             UiButtonNode("注销", "logout", UiButtonStyle.Tonal, enabled = enabled)
         } else {
             UiButtonNode("登录", "login", UiButtonStyle.Filled, enabled = enabled)
         }
-        // 按钮默认按内容宽度摆；包一层权重才占满整行
-        return UiRowNode(children = listOf(UiWeightNode(1f, button)))
     }
 
     private fun entries(): UiNode = UiGridNode(

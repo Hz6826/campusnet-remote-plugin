@@ -169,9 +169,9 @@ internal class HomePage(
     private fun actionButton(data: JSONObject?): UiNode {
         val enabled = !busy && data != null
         return if (data?.optBoolean("online") == true) {
-            UiButtonNode("注销", "logout", UiButtonStyle.Tonal, enabled = enabled)
+            UiButtonNode("注销", "logout", UiButtonStyle.Tonal, enabled = enabled, fillWidth = true)
         } else {
-            UiButtonNode("登录", "login", UiButtonStyle.Filled, enabled = enabled)
+            UiButtonNode("登录", "login", UiButtonStyle.Filled, enabled = enabled, fillWidth = true)
         }
     }
 

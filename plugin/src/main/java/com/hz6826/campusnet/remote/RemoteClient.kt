@@ -111,11 +111,11 @@ internal class RemoteClient(private val context: Context) {
         private const val STATUS_TIMEOUT = 20_000L
 
         fun error(code: String): JSONObject = JSONObject().put("ok", false).put("error", code)
-
-        /** 从可能带 `null` 的 JSON 里取一个能显示的值。 */
-        fun JSONObject.text(key: String): String {
-            val raw = optString(key)
-            return if (raw.isBlank() || raw == "null") "—" else raw
-        }
     }
+}
+
+/** 从可能带 `null` 的 JSON 里取一个能显示的值。 */
+internal fun JSONObject.text(key: String): String {
+    val raw = optString(key)
+    return if (raw.isBlank() || raw == "null") "—" else raw
 }

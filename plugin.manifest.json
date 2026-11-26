@@ -3,8 +3,8 @@
   "id": "hz6826.campusnet",
   "name": "校园网络遥控器",
   "summary": "遥控「校园网络助手」：看在线信息、登录、注销，不用来回切应用",
-  "version": "0.1.0",
-  "versionCode": 1,
+  "version": "0.1.1",
+  "versionCode": 2,
   "minAppVersionCode": 0,
   "author": {
     "name": "Hz6826",

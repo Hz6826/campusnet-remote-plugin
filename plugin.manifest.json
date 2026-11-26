@@ -1,0 +1,83 @@
+{
+  "manifestVersion": 1,
+  "id": "hz6826.campusnet",
+  "name": "校园网络遥控器",
+  "summary": "遥控「校园网络助手」：看在线信息、登录、注销，不用来回切应用",
+  "version": "0.1.0",
+  "versionCode": 1,
+  "minAppVersionCode": 0,
+  "author": {
+    "name": "Hz6826",
+    "url": "https://github.com/Hz6826"
+  },
+  "projectUrl": "https://github.com/Hz6826/campusnet-remote-plugin",
+  "type": "dex",
+  "apiVersion": 2,
+  "dex": {
+    "apk": "plugin.apk",
+    "entryClass": "com.hz6826.campusnet.remote.CampusNetPlugin",
+    "pages": [
+      {
+        "id": "home",
+        "title": "校园网络",
+        "icon": "school",
+        "iconColor": "#0288D1"
+      }
+    ],
+    "tools": [
+      {
+        "name": "status",
+        "definition": {
+          "type": "function",
+          "function": {
+            "name": "status",
+            "description": "查询校园网状态：是否已登录、IP、在线时长、已用流量、余额、当前 Wi-Fi，以及诊断信息（是否在排除列表、能不能读到 SSID、外网是否连通）。refresh=true 会真的去查一次并检测外网，比较慢。",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "refresh": {
+                  "type": "boolean",
+                  "description": "是否立即重新查询（默认 false，直接读缓存）"
+                },
+                "logs": {
+                  "type": "integer",
+                  "description": "顺带返回最近几条运行日志，0-20，默认 0"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "login",
+        "definition": {
+          "type": "function",
+          "function": {
+            "name": "login",
+            "description": "用「校园网络助手」里已保存的账号登录校园网。不需要参数；账号密码只能在那个 App 里改，插件拿不到也不传。",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "logout",
+        "definition": {
+          "type": "function",
+          "function": {
+            "name": "logout",
+            "description": "注销校园网登录。注销后自动登录会暂停，直到下次重新连接 Wi-Fi。",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      }
+    ]
+  },
+  "files": [],
+  "pubkey": ""
+}

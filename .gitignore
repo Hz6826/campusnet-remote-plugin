@@ -1,0 +1,14 @@
+*.iml
+.gradle/
+build/
+local.properties
+.idea/
+.DS_Store
+
+# 打包私钥：自己生成、自己留着，绝对不要提交
+signing/*.pem
+*.zip
+!gradle/wrapper/gradle-wrapper.jar
+
+# 插件 API 是宿主仓库的副本，构建时自动拉取，不进本仓库
+plugin-api/src/main/java/com/xjtu/toolbox/plugin/api/*.kt

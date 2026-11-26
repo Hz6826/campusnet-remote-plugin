@@ -30,7 +30,7 @@
 python3 package.py plugin/build/outputs/apk/debug/plugin-debug.apk -o dist/plugin.zip
 ```
 
-`plugin-api/` 是宿主 API 的副本，构建时自动从 `yeliqin666/xjtu-toolbox-android` 的 `dev` 分支拉，**不要在这里改**。
+`plugin-api/` 是宿主 API 的副本，构建时自动从 `xjtu-dzhz/dzhz` 的 `dev` 分支拉，**不要在这里改**。
 
 ## 自动构建
 
@@ -38,4 +38,4 @@ python3 package.py plugin/build/outputs/apk/debug/plugin-debug.apk -o dist/plugi
 
 ## 许可证
 
-[GPL-3.0](./LICENSE)，和盒子本体 [yeliqin666/xjtu-toolbox-android](https://github.com/yeliqin666/xjtu-toolbox-android) 一致。
+[GPL-3.0](./LICENSE)，和盒子本体 [xjtu-dzhz/dzhz](https://github.com/xjtu-dzhz/dzhz) 一致。
